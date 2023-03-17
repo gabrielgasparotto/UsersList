@@ -13,8 +13,8 @@ class UserListItemViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(user: User) {
-        binding.name.text = user.name
-        binding.username.text = user.username
+        binding.name.text = user.login
+        binding.username.text = user.type
         binding.progressBar.visibility = View.VISIBLE
         Picasso.get()
             .load(user.illustration)

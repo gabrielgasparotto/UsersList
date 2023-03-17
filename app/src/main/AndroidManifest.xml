@@ -15,7 +15,7 @@
         android:theme="@style/Theme.UsersList"
         tools:targetApi="31">
         <activity
-            android:name="com.example.features.users.presentation.activity.MainActivity"
+            android:name="com.example.features.users.presentation.activity.UsersActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

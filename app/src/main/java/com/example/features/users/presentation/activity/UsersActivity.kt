@@ -14,7 +14,7 @@ import com.example.features.users.presentation.viewmodel.UserViewModel
 import com.example.features.users.presentation.viewmodel.UserViewState
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainActivity : AppCompatActivity() {
+class UsersActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val adapter by lazy { UserListAdapter() }
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showErrorToast(message: String) {
-        Toast.makeText(this@MainActivity, message, Toast.LENGTH_SHORT)
+        Toast.makeText(this@UsersActivity, message, Toast.LENGTH_SHORT)
             .show()
     }
 

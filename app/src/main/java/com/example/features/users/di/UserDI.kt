@@ -12,19 +12,15 @@ import com.example.features.users.presentation.viewmodel.UserViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
-object UserDI {
-
-    val userModule = module {
-        viewModel { UserViewModel(useCase = get()) }
-        factory { UserUseCase(userRepository = get()) }
-        factory { UserMapper() }
-        factory<UserRepository> {
-            UserRepositoryImpl(
-                mapper = get(),
-                remoteData = get()
-            )
-        }
-        single<UserRemoteData> { service<UserRemoteService>(URL_GITHUB) }
+val userModule = module {
+    viewModel { UserViewModel(useCase = get()) }
+    factory { UserUseCase(userRepository = get()) }
+    factory { UserMapper() }
+    factory<UserRepository> {
+        UserRepositoryImpl(
+            mapper = get(),
+            remoteData = get()
+        )
     }
-
+    single<UserRemoteData> { service<UserRemoteService>(URL_GITHUB) }
 }

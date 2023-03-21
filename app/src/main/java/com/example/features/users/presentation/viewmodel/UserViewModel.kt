@@ -26,12 +26,8 @@ class UserViewModel(private val useCase: UserUseCase) : ViewModel() {
             }
         } else {
             result.exceptionOrNull()?.let {
-                interpretException(it)
+                viewState.postValue(UserViewState.UserError(it))
             }
         }
-    }
-
-    private fun interpretException(error: Throwable) {
-        viewState.postValue(UserViewState.UserError(error))
     }
 }
